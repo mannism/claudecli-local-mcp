@@ -37,10 +37,9 @@ function formatEntry(email) {
     `• *${email.subject}* — ${email.from}`,
     `  _${email.stream || 'General'}_`,
     `  ${email.summary}`,
-    `  *Latest:* ${email.latest_update || '—'}`,
   ];
-  if (email.actions_needed) {
-    lines.push(`  *Action needed:* ${email.actions_needed}`);
+  if (email.action) {
+    lines.push(`  *Action:* ${email.action}`);
   }
   return lines.join('\n');
 }
