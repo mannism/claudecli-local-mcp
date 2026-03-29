@@ -1,6 +1,8 @@
 require('dotenv').config();
 const { App } = require('@slack/bolt');
 const { askClaude } = require('./claude');
+const { handleEmailCommand } = require('./emailCommand');
+const { handleInboxCommand } = require('./inboxCommand');
 
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
@@ -38,6 +40,38 @@ app.event('app_mention', async ({ event, say }) => {
   } catch (err) {
     console.error('[error]', err);
     await say({ text: 'Sorry, something went wrong.', thread_ts: event.ts });
+  }
+});
+
+// /digest — Gmail email summary by priority
+app.command('/digest', async ({ ack, respond, command }) => {
+  await ack();
+  await respond({ text: '_Fetching your email digest…_' });
+  try {
+    await handleEmailCommand(command.text, respond);
+  } catch (err) {
+    console.error('[digest command error]', {
+      timestamp: new Date().toISOString(),
+      service: 'gmail',
+      message: err.message,
+    });
+    await respond('Sorry, could not fetch your emails. Please try again.');
+  }
+});
+
+// /inbox — Team Inbox file scanner
+app.command('/inbox', async ({ ack, respond }) => {
+  await ack();
+  await respond({ text: '_Scanning Team Inbox…_' });
+  try {
+    await handleInboxCommand(respond);
+  } catch (err) {
+    console.error('[inbox command error]', {
+      timestamp: new Date().toISOString(),
+      service: 'inbox',
+      message: err.message,
+    });
+    await respond('Sorry, could not scan the Team Inbox. Please try again.');
   }
 });
 
