@@ -18,7 +18,7 @@ const INBOX_SYSTEM_PROMPT = fs
 function scanInbox(inboxPath) {
   if (!inboxPath) {
     throw new Error(
-      'TEAM_INBOX_PATH is not set in .env. Add the path to your Team Inbox directory.'
+      'OWNER_INBOX_PATH is not set in .env. Add the path to the folder where your team drops files for you.'
     );
   }
 
@@ -118,11 +118,11 @@ function formatInboxBlocks(items) {
  * @param {Function} respond - Slack respond function
  */
 async function handleInboxCommand(respond) {
-  const inboxPath = process.env.TEAM_INBOX_PATH;
+  const inboxPath = process.env.OWNER_INBOX_PATH;
   const files = scanInbox(inboxPath);
 
   if (files.length === 0) {
-    await respond('📂 *Team Inbox*\n\n✅ Team Inbox is clear — nothing pending.');
+    await respond('📂 *Owner Inbox*\n\n✅ Nothing pending — no files from the team.');
     return;
   }
 
