@@ -13,16 +13,17 @@ Given a list of emails, classify each one into exactly one priority bucket:
 For each email, provide:
 - stream: inferred stream of work (e.g. venue, talent, dev, logistics, finance, marketing)
 - summary: 2-3 sentence plain-English summary of what the email is about
+- latest_update: the single most recent development or change mentioned in the thread (one sentence); useful when digest is run multiple times in a day to highlight what's new
 - action: the single clearest next step the recipient should take (one sentence), or null if FYI only
 - subject: the email subject line
 - from: the sender
 
 Return ONLY valid JSON matching this exact shape:
 {
-  "blockers": [{ "stream": "", "summary": "", "action": "", "subject": "", "from": "" }],
-  "high":     [{ "stream": "", "summary": "", "action": "", "subject": "", "from": "" }],
-  "medium":   [{ "stream": "", "summary": "", "action": "", "subject": "", "from": "" }],
-  "low":      [{ "stream": "", "summary": "", "action": null, "subject": "", "from": "" }]
+  "blockers": [{ "stream": "", "summary": "", "latest_update": "", "action": "", "subject": "", "from": "" }],
+  "high":     [{ "stream": "", "summary": "", "latest_update": "", "action": "", "subject": "", "from": "" }],
+  "medium":   [{ "stream": "", "summary": "", "latest_update": "", "action": "", "subject": "", "from": "" }],
+  "low":      [{ "stream": "", "summary": "", "latest_update": "", "action": null, "subject": "", "from": "" }]
 }
 
 If a bucket has no emails, use an empty array. Never include anything outside the JSON object.
