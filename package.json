@@ -14,7 +14,9 @@
   "dependencies": {
     "@anthropic-ai/sdk": "^0.80.0",
     "@slack/bolt": "^4.6.0",
-    "dotenv": "^17.3.1"
+    "dotenv": "^17.3.1",
+    "googleapis": "^171.4.0",
+    "openai": "^6.33.0"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
