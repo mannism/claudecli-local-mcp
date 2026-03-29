@@ -59,19 +59,19 @@ app.command('/digest', async ({ ack, respond, command }) => {
   }
 });
 
-// /inbox — Team Inbox file scanner
-app.command('/inbox', async ({ ack, respond }) => {
+// /owner-inbox — files the team has sent to the owner to review
+app.command('/owner-inbox', async ({ ack, respond }) => {
   await ack();
-  await respond({ text: '_Scanning Team Inbox…_' });
+  await respond({ text: '_Scanning your inbox…_' });
   try {
     await handleInboxCommand(respond);
   } catch (err) {
-    console.error('[inbox command error]', {
+    console.error('[owner-inbox command error]', {
       timestamp: new Date().toISOString(),
-      service: 'inbox',
+      service: 'owner-inbox',
       message: err.message,
     });
-    await respond('Sorry, could not scan the Team Inbox. Please try again.');
+    await respond('Sorry, could not scan your inbox. Please try again.');
   }
 });
 

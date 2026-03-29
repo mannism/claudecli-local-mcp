@@ -10,7 +10,7 @@ Internal Slack bot that routes messages to Claude — via the local `claude` CLI
 
 - Responds to **direct messages** and **@mentions** in Slack
 - `/digest` — fetches unread Gmail for a specified account, classifies by priority using GPT-5.2, and returns a formatted summary
-- `/inbox` — scans the Owner Inbox folder (files your team shared with you) and suggests priority actions
+- `/owner-inbox` — scans the Owner Inbox folder (files your team shared with you) and suggests priority actions
 - Two Claude modes, switchable via env var:
   - **CLI mode** (`USE_CLI=true`) — shells out to the local `claude` binary; no API key needed, local dev only
   - **API mode** (`USE_CLI=false`) — calls the Anthropic API directly; required for cloud/Railway deployment
@@ -27,7 +27,7 @@ Internal Slack bot that routes messages to Claude — via the local `claude` CLI
 - For CLI mode: `claude` CLI installed and authenticated
 - For API mode: an Anthropic API key
 - For `/digest`: a Google Cloud project with Gmail API enabled + OAuth 2.0 credentials
-- For `/digest` and `/inbox`: an OpenAI API key
+- For `/digest` and `/owner-inbox`: an OpenAI API key
 
 ---
 
@@ -68,7 +68,7 @@ Register these in your Slack app (Features → Slash Commands). No Request URL n
 | Command | Description |
 |---|---|
 | `/digest <alias> [query]` | Priority-classified Gmail summary for the specified account |
-| `/inbox` | Lists files your team shared with you, prioritised by GPT-5.2 |
+| `/owner-inbox` | Lists files your team shared with you, prioritised by GPT-5.2 |
 
 **`/digest` usage:**
 
@@ -115,10 +115,10 @@ Register these in your Slack app (Features → Slash Commands). No Request URL n
 | `OPENAI_API_KEY` | Yes | OpenAI API key (`sk-proj-...`) |
 | `OPENAI_MODEL` | No | Model to use (default: `gpt-5.2`) |
 
-### File Inboxes (`/inbox`)
+### File Inboxes (`/owner-inbox`)
 | Variable | Required | Description |
 |---|---|---|
-| `OWNER_INBOX_PATH` | `/inbox` only | Folder where your team drops files for you to review |
+| `OWNER_INBOX_PATH` | `/owner-inbox` only | Folder where your team drops files for you to review |
 | `TEAM_INBOX_PATH` | No | Folder where you put files to share with the team via Slack |
 
 ---
