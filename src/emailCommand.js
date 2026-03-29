@@ -33,11 +33,16 @@ function parseDigestArgs(text) {
  * @returns {string}
  */
 function formatEntry(email) {
-  return (
-    `• *${email.subject}* — ${email.from}\n` +
-    `  _${email.summary}_\n` +
-    `  *Action:* ${email.action}`
-  );
+  const lines = [
+    `• *${email.subject}* — ${email.from}`,
+    `  _${email.stream || 'General'}_`,
+    `  ${email.summary}`,
+    `  *Latest:* ${email.latest_update || '—'}`,
+  ];
+  if (email.actions_needed) {
+    lines.push(`  *Action needed:* ${email.actions_needed}`);
+  }
+  return lines.join('\n');
 }
 
 /**
