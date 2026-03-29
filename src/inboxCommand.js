@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const OpenAI = require('openai');
 
-const MODEL = process.env.OPENAI_MODEL || 'gpt-5.2';
+const MODEL = process.env.OPENAI_MODEL_INBOX || 'gpt-5-mini';
 
 const INBOX_SYSTEM_PROMPT = fs
   .readFileSync(path.join(__dirname, '../prompts/inbox-analysis.md'), 'utf-8')
