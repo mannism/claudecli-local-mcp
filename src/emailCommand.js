@@ -29,7 +29,7 @@ function parseDigestArgs(text) {
 
 /**
  * Formats a single prioritised email entry.
- * @param {{ subject: string, from: string, summary: string, action: string }} email
+ * @param {{ subject: string, from: string, stream: string, summary: string, latest_update: string, action: string|null }} email
  * @returns {string}
  */
 function formatEntry(email) {
@@ -38,6 +38,9 @@ function formatEntry(email) {
     `  _${email.stream || 'General'}_`,
     `  ${email.summary}`,
   ];
+  if (email.latest_update) {
+    lines.push(`  *Latest:* ${email.latest_update}`);
+  }
   if (email.action) {
     lines.push(`  *Action:* ${email.action}`);
   }
