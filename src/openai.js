@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const OpenAI = require('openai');
 
-const MODEL = process.env.OPENAI_MODEL_SUMMARY || 'gpt-5.2';
+const MODEL = process.env.OPENAI_MODEL_EMAIL_SUMMARY || 'gpt-5.2';
 
 const SYSTEM_PROMPT = fs
   .readFileSync(path.join(__dirname, '../prompts/email-summary.md'), 'utf-8')
