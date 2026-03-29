@@ -113,7 +113,8 @@ Register these in your Slack app (Features → Slash Commands). No Request URL n
 | Variable | Required | Description |
 |---|---|---|
 | `OPENAI_API_KEY` | Yes | OpenAI API key (`sk-proj-...`) |
-| `OPENAI_MODEL` | No | Model to use (default: `gpt-5.2`) |
+| `OPENAI_MODEL_EMAIL_SUMMARY` | No | Model for `/digest` email classification (default: `gpt-5.2`) |
+| `OPENAI_MODEL_INBOX` | No | Model for `/owner-inbox` file analysis (default: `gpt-5-mini`) |
 
 ### File Inboxes (`/owner-inbox`)
 | Variable | Required | Description |

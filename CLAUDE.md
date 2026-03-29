@@ -71,7 +71,8 @@ Copy `.env.example` to `.env` and fill in values. Never commit `.env`.
 | Variable | Required | Description |
 |---|---|---|
 | `OPENAI_API_KEY` | Yes | OpenAI API key (`sk-proj-...`) |
-| `OPENAI_MODEL` | No | Defaults to `gpt-5.2` |
+| `OPENAI_MODEL_EMAIL_SUMMARY` | No | Model for `/digest` email classification (default: `gpt-5.2`) |
+| `OPENAI_MODEL_INBOX` | No | Model for `/owner-inbox` file analysis (default: `gpt-5-mini`) |
 
 ### File Inboxes (`/owner-inbox`)
 | Variable | Required | Description |
