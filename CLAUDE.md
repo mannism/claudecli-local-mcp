@@ -1,6 +1,6 @@
 # CLAUDE.md — claudecli-local-mcp
 
-Internal project: Slack bot that proxies messages to Claude via either the local `claude` CLI or the Anthropic API, with multi-account Gmail digest (`/digest`) and Owner Inbox (`/inbox`) commands powered by GPT-5.2.
+Internal project: Slack bot that proxies messages to Claude via either the local `claude` CLI or the Anthropic API, with multi-account Gmail digest (`/digest`) and Owner Inbox (`/owner-inbox`) commands powered by GPT-5.2.
 
 ---
 
@@ -73,10 +73,10 @@ Copy `.env.example` to `.env` and fill in values. Never commit `.env`.
 | `OPENAI_API_KEY` | Yes | OpenAI API key (`sk-proj-...`) |
 | `OPENAI_MODEL` | No | Defaults to `gpt-5.2` |
 
-### File Inboxes (`/inbox`)
+### File Inboxes (`/owner-inbox`)
 | Variable | Required | Description |
 |---|---|---|
-| `OWNER_INBOX_PATH` | `/inbox` only | Folder where the team drops files for the owner to review |
+| `OWNER_INBOX_PATH` | `/owner-inbox` only | Folder where the team drops files for the owner to review |
 | `TEAM_INBOX_PATH` | No | Folder where the owner puts files to share with the team via Slack |
 
 ---
@@ -97,7 +97,7 @@ node scripts/gmail-auth.js --account 2   # repeat for additional accounts
 
 ### Slash Commands
 
-Register `/digest` and `/inbox` in the Slack app settings (Features → Slash Commands). In Socket Mode, no Request URL is needed.
+Register `/digest` and `/owner-inbox` in the Slack app settings (Features → Slash Commands). In Socket Mode, no Request URL is needed.
 
 ```
 /digest diana                          # all unread for diana's account
