@@ -1,7 +1,5 @@
 # claudecli-local-mcp
 
-![version](https://img.shields.io/github/package-json/v/mannism/claudecli-local-mcp)
-
 Internal Slack bot that routes messages to Claude — via the local `claude` CLI or the Anthropic API — with multi-account Gmail digest and Team Inbox commands powered by GPT-5.2.
 
 ---
