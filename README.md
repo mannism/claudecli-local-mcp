@@ -118,7 +118,6 @@ Register these in your Slack app (Features → Slash Commands). No Request URL n
 | Variable | Required | Description |
 |---|---|---|
 | `OWNER_INBOX_PATH` | `/owner-inbox` only | Folder where your team drops files for you to review |
-| `TEAM_INBOX_PATH` | No | Folder where you put files to share with the team via Slack |
 
 ---
 
