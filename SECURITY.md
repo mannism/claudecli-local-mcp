@@ -6,7 +6,7 @@ Only the latest release on `main` receives security patches.
 
 ## Reporting a Vulnerability
 
-Please report vulnerabilities privately via email to **security@dianaismail.com**.
+Please report vulnerabilities privately via email to **security@dianaismail.me**.
 
 Do not open a public GitHub issue for security vulnerabilities.
 
