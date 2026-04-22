@@ -7,7 +7,7 @@
     "start": "node src/index.js",
     "dev": "node --watch src/index.js"
   },
-  "keywords": [],
+  "keywords": ["slack", "claude", "mcp", "ai", "email"],
   "author": "Diana Ismail",
   "license": "ISC",
   "type": "commonjs",
