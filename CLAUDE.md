@@ -1,5 +1,7 @@
 # CLAUDE.md — claudecli-local-mcp
 
+> **Scope rule:** If a session starts from this repo, work only on this project. Do not touch other repos unless the Owner explicitly says otherwise.
+
 Internal project: Slack bot that proxies messages to Claude via either the local `claude` CLI or the Anthropic API, with multi-account Gmail digest (`/digest`) and Owner Inbox (`/owner-inbox`) commands powered by GPT-5.2.
 
 ---
