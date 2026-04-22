@@ -78,7 +78,6 @@ Copy `.env.example` to `.env` and fill in values. Never commit `.env`.
 | Variable | Required | Description |
 |---|---|---|
 | `OWNER_INBOX_PATH` | `/owner-inbox` only | Folder where the team drops files for the owner to review |
-| `TEAM_INBOX_PATH` | No | Folder where the owner puts files to share with the team via Slack |
 
 ---
 
