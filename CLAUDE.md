@@ -2,6 +2,8 @@
 
 > **Scope rule:** If a session starts from this repo, work only on this project. Do not touch other repos unless the Owner explicitly says otherwise.
 
+> Global rules (TypeScript, security, git workflow, accessibility baseline) are in ~/.claude/CLAUDE.md
+
 Internal project: Slack bot that proxies messages to Claude via either the local `claude` CLI or the Anthropic API, with multi-account Gmail digest (`/digest`) and Owner Inbox (`/owner-inbox`) commands powered by GPT-5.2.
 
 ---
@@ -107,25 +109,6 @@ Register `/digest` and `/owner-inbox` in the Slack app settings (Features → Sl
 /digest                                # auto-selects if only 1 account configured
 /inbox                                 # scans OWNER_INBOX_PATH for files from the team
 ```
-
----
-
-## Git Workflow
-
-- **Never commit directly to `main`**
-- **Never merge to `main` without explicit owner instruction**
-- Branch types: `feat/`, `fix/`, `docs/`, `chore/`
-- Branch naming: `<type>/<short-description>` (e.g. `feat/slack-error-handling`)
-- Commit format: Conventional Commits (`feat:`, `fix:`, `chore:`, `docs:`, etc.)
-- Each change goes on its own branch — one logical change per branch
-- Prompt file changes (`prompts/`) must always be their own branch and commit
-
-| Type | Version bump |
-|---|---|
-| `feat:` | Minor (1.0.0 → 1.1.0) |
-| `fix:` | Patch (1.0.0 → 1.0.1) |
-| `chore:` / `refactor:` / `docs:` | Patch |
-| `BREAKING CHANGE:` in footer | Major (1.0.0 → 2.0.0) |
 
 ---
 

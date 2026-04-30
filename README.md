@@ -137,6 +137,15 @@ Set `USE_CLI=false` and provide `ANTHROPIC_API_KEY`. Deploy as a standard Node.j
 
 ---
 
+## Repo conventions
+
+- **Dependabot:** weekly cadence, minor + patch grouped, max 5 open PRs (`.github/dependabot.yml`)
+- **PR comprehension gate:** every PR (especially agent-generated) answers the 3 core questions in `.claude/rules/pr-review.md` before merge
+- **Module manifests:** indexed in `MODULES.md` — none yet (no qualifying modules)
+- **Branching:** `feat/`, `fix/`, `chore/`, `docs/`, `refactor:`, `ci:` — Conventional Commits required for semantic-release
+
+---
+
 ## Releases
 
 Releases are automated via [semantic-release](https://semantic-release.gitbook.io). Merging to `main` triggers the release pipeline which bumps the version, updates `CHANGELOG.md`, and publishes a GitHub release. The version badge at the top of this file updates automatically.
