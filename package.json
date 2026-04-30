@@ -1,13 +1,19 @@
 {
   "name": "claudecli-local-mcp",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Slack-to-Claude bridge — slash commands for email triage, owner inbox scanning, and AI-powered summaries",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
     "dev": "node --watch src/index.js"
   },
-  "keywords": ["slack", "claude", "mcp", "ai", "email"],
+  "keywords": [
+    "slack",
+    "claude",
+    "mcp",
+    "ai",
+    "email"
+  ],
   "author": "Diana Ismail",
   "license": "ISC",
   "type": "commonjs",

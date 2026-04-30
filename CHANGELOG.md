@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/mannism/claudecli-local-mcp/compare/v1.0.0...v1.0.1) (2026-04-30)
+
+
+### Bug Fixes
+
+* **deps:** bump @anthropic-ai/sdk, axios, follow-redirects for Dependabot alerts ([#9](https://github.com/mannism/claudecli-local-mcp/issues/9)) ([37f85d8](https://github.com/mannism/claudecli-local-mcp/commit/37f85d85220759d7ab3d6a44424ca45819c71797))
+
 # 1.0.0 (2026-04-19)
 
 
