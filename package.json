@@ -18,11 +18,11 @@
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
-    "@anthropic-ai/sdk": "^0.91.1",
-    "@slack/bolt": "^4.6.0",
-    "dotenv": "^17.3.1",
+    "@anthropic-ai/sdk": "^0.93.0",
+    "@slack/bolt": "^4.7.2",
+    "dotenv": "^17.4.2",
     "googleapis": "^171.4.0",
-    "openai": "^6.33.0"
+    "openai": "^6.36.0"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^6.0.3",
