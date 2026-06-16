@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/mannism/claudecli-local-mcp/compare/v1.0.2...v1.0.3) (2026-06-16)
+
+
+### Bug Fixes
+
+* **deps:** override lodash/lodash-es→4.18.1 to fix HIGH code injection advisory ([#18](https://github.com/mannism/claudecli-local-mcp/issues/18)) ([5d29f9b](https://github.com/mannism/claudecli-local-mcp/commit/5d29f9bd8863c8e7e93c7ea9c521ba73f54cbfd1))
+
 ## [1.0.2](https://github.com/mannism/claudecli-local-mcp/compare/v1.0.1...v1.0.2) (2026-06-16)
 
 
