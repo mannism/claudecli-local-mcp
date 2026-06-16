@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/mannism/claudecli-local-mcp/compare/v1.0.1...v1.0.2) (2026-06-16)
+
+
+### Bug Fixes
+
+* **deps:** override ws→8.21.0 and form-data→4.0.6 to fix HIGH advisories ([#17](https://github.com/mannism/claudecli-local-mcp/issues/17)) ([76ca5c9](https://github.com/mannism/claudecli-local-mcp/commit/76ca5c9250722569a98fc25e9d5225b31c22d6ce))
+
 ## [1.0.1](https://github.com/mannism/claudecli-local-mcp/compare/v1.0.0...v1.0.1) (2026-04-30)
 
 

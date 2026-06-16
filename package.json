@@ -1,6 +1,6 @@
 {
   "name": "claudecli-local-mcp",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Slack-to-Claude bridge — slash commands for email triage, owner inbox scanning, and AI-powered summaries",
   "main": "src/index.js",
   "scripts": {
