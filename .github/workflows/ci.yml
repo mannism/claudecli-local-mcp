@@ -17,9 +17,10 @@ jobs:
       - run: npm ci
       # Accepted-risk: GHSA-q8mj-m7cp-5q26 (qs moderate DoS via `qs.stringify` on null array entries when
       # `encodeValuesOnly` is set). No reachable attack surface — this repo never calls `qs.stringify`,
-      # transitive callers (express body-parser parsing, googleapis OAuth) do not pass user-controlled data
-      # through that codepath. Track upstream: `qs@6.15.2`.
-      # Accepted-risk: GHSA-58qx-3vcg-4xpx (ws moderate uninitialized memory disclosure on the server
-      # receive path). Not reachable — this process is a WebSocket client only (Socket Mode → Slack,
-      # OpenAI streaming). Server-side codepath cannot fire. Track upstream: `ws@8.21.0`.
+      # transitive callers (googleapis OAuth) do not pass user-controlled data through that codepath.
+      # Track upstream: `qs@6.15.2`.
+      # ws HIGH advisories (GHSA-58qx-3vcg-4xpx uninitialized memory disclosure,
+      # GHSA-96hv-2xvq-fx4p memory exhaustion DoS) and form-data HIGH advisory
+      # (GHSA-hmw2-7cc7-3qxx CRLF injection) are resolved by package.json overrides
+      # pinning ws>=8.21.0 and form-data>=4.0.6.
       - run: npm audit --production --audit-level=high
