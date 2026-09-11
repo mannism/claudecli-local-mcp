@@ -88,7 +88,7 @@ Register `/digest` and `/owner-inbox` in the Slack app settings (Features → Sl
 
 ## Testing
 
-Tier 3 — no test runner. See `/Users/mann/Documents/Claude/testing-policy.md` for the fleet's Tier 3 baseline (manual smoke + Dependabot + npm audit in CI).
+Tier 3 — no test runner. See `/Users/mann/Claude/testing-policy.md` for the fleet's Tier 3 baseline (manual smoke + Dependabot + npm audit in CI).
 
 ## Repo-specific gotchas
 
