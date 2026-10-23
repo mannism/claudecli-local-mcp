@@ -1,13 +1,13 @@
 # claudecli-local-mcp
 
-Internal Slack bot that routes messages to Claude — via the local `claude` CLI or the Anthropic API — with multi-account Gmail digest and Team Inbox commands powered by GPT-5.2.
+Internal Slack bot that routes messages to Claude — via the local `claude` CLI or the Anthropic API — with multi-account Gmail digest and Team Inbox commands powered by GPT.
 
 ---
 
 ## How it works
 
 - Responds to **direct messages** and **@mentions** in Slack
-- `/digest` — fetches unread Gmail for a specified account, classifies by priority using GPT-5.2, and returns a formatted summary
+- `/digest` — fetches unread Gmail for a specified account, classifies by priority using GPT, and returns a formatted summary
 - `/owner-inbox` — scans the Owner Inbox folder (files your team shared with you) and suggests priority actions
 - Two Claude modes, switchable via env var:
   - **CLI mode** (`USE_CLI=true`) — shells out to the local `claude` binary; no API key needed, local dev only
@@ -66,7 +66,7 @@ Register these in your Slack app (Features → Slash Commands). No Request URL n
 | Command | Description |
 |---|---|
 | `/digest <alias> [query]` | Priority-classified Gmail summary for the specified account |
-| `/owner-inbox` | Lists files your team shared with you, prioritised by GPT-5.2 |
+| `/owner-inbox` | Lists files your team shared with you, prioritised by GPT |
 
 **`/digest` usage:**
 
@@ -111,8 +111,8 @@ Register these in your Slack app (Features → Slash Commands). No Request URL n
 | Variable | Required | Description |
 |---|---|---|
 | `OPENAI_API_KEY` | Yes | OpenAI API key (`sk-proj-...`) |
-| `OPENAI_MODEL_EMAIL_SUMMARY` | No | Model for `/digest` email classification (default: `gpt-5.2`) |
-| `OPENAI_MODEL_INBOX` | No | Model for `/owner-inbox` file analysis (default: `gpt-5-mini`) |
+| `OPENAI_MODEL_EMAIL_SUMMARY` | No | Model for `/digest` email classification (default: `gpt-6.1-sol`) |
+| `OPENAI_MODEL_INBOX` | No | Model for `/owner-inbox` file analysis (default: `gpt-5.6-terra`) |
 
 ### File Inboxes (`/owner-inbox`)
 | Variable | Required | Description |
