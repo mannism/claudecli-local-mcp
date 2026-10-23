@@ -1,6 +1,6 @@
 # claudecli-local-mcp
 
-Internal Slack bot that proxies messages to Claude (via the local `claude` CLI or the Anthropic API), with multi-account Gmail digest (`/digest`) and Owner Inbox (`/owner-inbox`) commands powered by GPT-5.2.
+Internal Slack bot that proxies messages to Claude (via the local `claude` CLI or the Anthropic API), with multi-account Gmail digest (`/digest`) and Owner Inbox (`/owner-inbox`) commands powered by GPT.
 
 For fleet-wide standards (TypeScript, security, git workflow, PR comprehension gate, language policy), see `~/AGENTS.md`.
 
@@ -52,8 +52,8 @@ Names only — values live in `.env` (gitignored). Full descriptions in `.env.ex
 
 ### OpenAI
 - `OPENAI_API_KEY` — OpenAI API key (`sk-proj-...`)
-- `OPENAI_MODEL_EMAIL_SUMMARY` — model for `/digest` (default: `gpt-5.2`)
-- `OPENAI_MODEL_INBOX` — model for `/owner-inbox` (default: `gpt-5-mini`)
+- `OPENAI_MODEL_EMAIL_SUMMARY` — model for `/digest` (default: `gpt-6.1-sol`)
+- `OPENAI_MODEL_INBOX` — model for `/owner-inbox` (default: `gpt-5.6-terra`)
 
 ### File Inboxes (`/owner-inbox`)
 - `OWNER_INBOX_PATH` — folder where the team drops files for the owner to review
@@ -88,7 +88,7 @@ Register `/digest` and `/owner-inbox` in the Slack app settings (Features → Sl
 
 ## Testing
 
-Tier 3 — no test runner. See `/Users/mann/Documents/Claude/testing-policy.md` for the fleet's Tier 3 baseline (manual smoke + Dependabot + npm audit in CI).
+Tier 3 — no test runner. See `/Users/mann/Claude/testing-policy.md` for the fleet's Tier 3 baseline (manual smoke + Dependabot + npm audit in CI).
 
 ## Repo-specific gotchas
 
